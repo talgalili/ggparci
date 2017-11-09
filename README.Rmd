@@ -1,0 +1,37 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# ggparci
+
+The goal of ggparci is to ...
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+
+library(plotly)
+library(cluster)
+library(ggparci)
+tmp_org <- readRDS('data/tmp_org.rds')
+clus_r <- pam(tmp_org, k = 2)$cluster
+p <- ggparcoord_ci(tmp_org, clus_r, alpha_per_line = 0.01, jitter_median_factor = 2,
+                   alpha_geom_ribbon = 0.3, flip = TRUE)+ggtitle('rank') 
+
+p
+
+```

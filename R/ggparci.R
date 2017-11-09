@@ -21,7 +21,9 @@
 #' @param ... PARAM_DESCRIPTION
 #' @return OUTPUT_DESCRIPTION
 #' @details DETAILS
+#'
 #' @examples
+#'
 #' \dontrun{
 #'
 #' ggparci(iris[,-5], iris[,5])
@@ -37,8 +39,9 @@
 #' library(plotly)
 #' ggplotly(p)
 #'
-#'  }
+#'
 #' }
+#'
 #' @rdname ggparci
 #' @export
 ggparci <- function(x, group, level = 0.95,

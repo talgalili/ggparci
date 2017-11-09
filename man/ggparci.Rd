@@ -51,3 +51,24 @@ FUNCTION_DESCRIPTION
 \details{
 DETAILS
 }
+\examples{
+
+\dontrun{
+
+ggparci(iris[,-5], iris[,5])
+ggparci(normalize(iris[,-5]), iris[,5], ylim = c(0,1))
+ggparci(percentize(iris[,-5]), iris[,5], ylim = c(0,1))
+ggparci(x = percentize(mtcars[,-10]),group =  factor(mtcars[,10]), ylim = c(0,1))
+ggparci(x = percentize(mtcars[,-9]),group =  factor(mtcars[,9]), ylim = c(0,1), lab_group = "automatic\\nvs\\nmanual")
+
+ggparci(x = percentize(mtcars[,-9]),group =  factor(mtcars[,9]), jitter_median_factor = 0)
+ggparci(x = percentize(mtcars[,-9]),group =  factor(mtcars[,9]), jitter_median_factor = 5)
+
+p <- ggparci(x = percentize(mtcars[,-9]),group =  factor(mtcars[,9]), ylim = c(0,1), lab_group = "automatic\\nvs\\nmanual", flip = TRUE)
+library(plotly)
+ggplotly(p)
+
+
+}
+
+}
